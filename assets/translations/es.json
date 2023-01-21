@@ -1,3 +1,15 @@
 {
-    
+    "nameApp": {
+        "name": "Agros Tech"
+    },
+    "login": {
+        "title": "Bienvenido",
+        "user": "Usuario",
+        "password": "Contraseña",
+        "button": "Ingresar",
+        "error":{
+            "title":"Información del servidor",
+            "message":"Debe corregir los campos marcados en rojo"
+        }
+    }
 }

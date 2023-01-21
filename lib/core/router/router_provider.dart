@@ -1,8 +1,7 @@
+import 'package:app_images/presentation/presentation.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:app_images/presentation/presentation.dart';
-import 'package:app_images/src/src.dart';
 
 part 'app_routes.dart';
 
@@ -19,13 +18,6 @@ class AppRouter {
         ),
         debugLogDiagnostics: kDebugMode,
         initialLocation: AppRoutes.nameLogin,
-        redirect: (context, state) async {
-          /*  final isInSession = await sl<IsInSession>().call();
-          return isInSession.fold(
-            (l) => AppRoutes.routeLogin,
-            (r) => AppRoutes.routeHome,
-          ); */
-        },
         routes: [
           GoRoute(
             name: AppRoutes.nameLogin,

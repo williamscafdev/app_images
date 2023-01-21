@@ -1,6 +1,6 @@
+import 'package:app_images/core/core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:app_images/core/core.dart';
 
 enum StatusProcess {
   onLoading,
@@ -20,8 +20,8 @@ abstract class ProgressDialogo {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ImgGreat(
-                path: ImgA.logoAppNotBg.path,
+              const ImgGreat(
+                img: ImgA.logo,
               ),
               gap16,
               CircularProgressIndicator(
@@ -66,8 +66,8 @@ abstract class ProgressDialogo {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ImgGreat(
-                path: ImgA.logoAppNotBg.path,
+              const ImgGreat(
+                img: ImgA.logo,
               ),
               gap16,
               CircularProgressIndicator(

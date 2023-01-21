@@ -7,6 +7,7 @@ enum MException {
   weakPassword('La contraseña es muy débil.'),
   userDisabled('Su usuario ha sido deshabilitado.'),
   userNotFound('Usuario o contraseña incorrectos.'),
+  serverError('Error del servidor.'),
   tooManyRequests(
     'El acceso a esta cuenta se ha inhabilitado temporalmente debido a muchos intentos fallidos de inicio de sesión. Puede restaurarlo inmediatamente restableciendo su contraseña o puede volver a intentarlo más tarde.',
   ),
