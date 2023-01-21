@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/core.dart';
@@ -16,13 +17,13 @@ class ButtonSaveImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Button(
-      label: 'Grabar Imagen',
+      label: 'home.saveImage'.tr(),
       onPressed: () => ProgressDialogo.show(
         context: context,
         onLoading: () => onPressed(),
         onSuccess: () => _onShowInformation(
           context,
-          'Imagen guardada correctamente',
+          'home.messageSuccess'.tr(),
         ),
         onError: () => _onShowInformation(
           context,
@@ -42,7 +43,7 @@ class ButtonSaveImage extends StatelessWidget {
   ) =>
       showDialogInformation(
         context: context,
-        title: 'Información',
+        title: 'home.showMessage.title'.tr(),
         message: message,
         onPressed: () => context.safeNavigatorPop(),
       );

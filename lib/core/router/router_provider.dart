@@ -29,6 +29,11 @@ class AppRouter {
             path: AppRoutes.routeHome,
             builder: (context, state) => const HomeScreen(),
           ),
+          GoRoute(
+            name: AppRoutes.nameGallery,
+            path: AppRoutes.routeGallery,
+            builder: (context, state) => const GalleryScreen(),
+          ),
         ],
       );
 }

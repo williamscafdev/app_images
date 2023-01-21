@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
+import '../../../core/core.dart';
+
 class ImagePreviewDownload extends StatelessWidget {
   const ImagePreviewDownload(
       {required this.urlImage, this.isNetwork = true, Key? key})
@@ -13,7 +15,7 @@ class ImagePreviewDownload extends StatelessWidget {
     return urlImage != ''
         ? buildImg(isNetwork)
         : Image.asset(
-            'assets/images/not-image.jpeg',
+             ImgA.notImage.path,
             height: 300,
             width: double.infinity,
           );

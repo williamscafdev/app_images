@@ -7,9 +7,26 @@
         "user": "Usuario",
         "password": "Contraseña",
         "button": "Ingresar",
-        "error":{
-            "title":"Información del servidor",
-            "message":"Debe corregir los campos marcados en rojo"
+        "error": {
+            "title": "Información del servidor",
+            "message": "Debe corregir los campos marcados en rojo"
+        }
+    },
+    "gallery": {
+        "title": "Galeria"
+    },
+    "home": {
+        "title": "Inicio",
+        "saveImage": "Grabar Imagen",
+        "messageSuccess": "Imagen guardada correctamente",
+        "showMessage": {
+            "title": "Información"
+        },
+        "inputText": {
+            "hint": "Cargar imagen"
+        },
+        "button": {
+            "getImage": "Carga\nImagen"
         }
     }
 }
