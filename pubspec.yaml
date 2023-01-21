@@ -49,12 +49,10 @@ flutter:
     - assets/translations/
 
 flutter_native_splash:
-  color: "#0077FF"
-  image: assets/images/logo_transporte.png
-  branding: assets/images/brandingv2.png
-  color_dark: "#252A2B"
-  image_dark: assets/images/logo_transporte.png
-  branding_dark: assets/images/brandingv2.png
+  color: "#FFFFFF"
+  image: assets/images/logo.png
+  color_dark: "#FFFFFF"
+  image_dark: assets/images/logo.png
   android_disable_fullscreen: true
   android: true
   ios: true
@@ -62,5 +60,5 @@ flutter_native_splash:
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/images/icon_app.png"
+  image_path: "assets/images/icon-app.png"
   min_sdk_android: 21

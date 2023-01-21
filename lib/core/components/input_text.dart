@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:app_images/core/core.dart';
+import 'package:flutter/material.dart';
 
 enum ErrorType {
   required,
@@ -134,6 +134,10 @@ class _InputTextState extends State<InputText> {
           if (value!.isEmpty) {
             errorMessageText = 'j';
             setState(() {});
+            return widget.errorMessageValidator ??
+                'Complete los campos del formulario.';
+          }
+          if (!isCompleted) {
             return widget.errorMessageValidator ??
                 'Complete los campos del formulario.';
           }

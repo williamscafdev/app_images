@@ -1,10 +1,12 @@
+import 'package:app_images/core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:app_images/core/core.dart';
 
 class InputPassword extends HookWidget {
-  const InputPassword({required this.passwordController, super.key});
+  const InputPassword(
+      {required this.passwordController, required this.hint, super.key});
   final TextEditingController passwordController;
+  final String hint;
 
   @override
   Widget build(BuildContext context) {
@@ -12,8 +14,8 @@ class InputPassword extends HookWidget {
     return InputText(
       controller: passwordController,
       obscureText: showPassword.value,
-      hint: 'Contraseña',
-      minLenght: 6,
+      hint: hint,
+      minLenght: 3,
       iconSuffix: IconButton(
         onPressed: () {
           showPassword.value = !showPassword.value;

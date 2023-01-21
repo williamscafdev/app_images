@@ -1,12 +1,12 @@
+import 'package:app_images/core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_svg_image/flutter_svg_image.dart';
-import 'package:app_images/core/core.dart';
 import 'package:shimmer/shimmer.dart';
 
 class ImgGreat extends StatelessWidget {
   const ImgGreat({
-    required this.path,
+    required this.img,
     this.width,
     this.height,
     this.color,
@@ -15,7 +15,7 @@ class ImgGreat extends StatelessWidget {
     this.isNetwork = false,
     super.key,
   });
-  final String path;
+  final ImgA img;
   final double? width;
   final double? height;
   final Color? color;
@@ -24,7 +24,7 @@ class ImgGreat extends StatelessWidget {
   final bool? isNetwork;
 
   bool convertImage() {
-    if (path.split('.').last != 'svg') {
+    if (img.path.split('.').last != 'svg') {
       return false;
     }
     return true;
@@ -40,7 +40,7 @@ class ImgGreat extends StatelessWidget {
           height: height,
           width: width,
           fit: fit,
-          image: SvgImage.cachedNetwork(path, currentColor: color),
+          image: SvgImage.cachedNetwork(img.path, currentColor: color),
           loadingBuilder: (
             BuildContext context,
             Widget child,
@@ -93,7 +93,7 @@ class ImgGreat extends StatelessWidget {
             height: height,
             width: width,
             child: SvgPicture.asset(
-              path,
+              img.path,
               height: height,
               width: width,
               fit: fit!,
@@ -120,7 +120,7 @@ class ImgGreat extends StatelessWidget {
       : Padding(
           padding: padding ?? pad0,
           child: Image.asset(
-            path,
+            img.path,
             color: color,
             height: height,
             width: width,
