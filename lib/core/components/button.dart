@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:app_images/core/core.dart';
+import 'package:flutter/material.dart';
 
 class Button extends StatelessWidget {
   const Button({
@@ -9,6 +9,9 @@ class Button extends StatelessWidget {
     this.backGroundColor = AppColors.green200,
     this.isEnabled = true,
     this.textColor = AppColors.black,
+    this.borderRadius = const BorderRadius.all(
+      Radius.circular(0),
+    ),
     super.key,
   });
   final VoidCallback onPressed;
@@ -17,6 +20,7 @@ class Button extends StatelessWidget {
   final Color backGroundColor;
   final bool isEnabled;
   final Color textColor;
+  final BorderRadius borderRadius;
 
   @override
   Widget build(BuildContext context) => ElevatedButton(
@@ -24,10 +28,10 @@ class Button extends StatelessWidget {
           padding: padding,
           backgroundColor: backGroundColor,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: borderRadius,
           ),
         ),
-        onPressed: onPressed,
+        onPressed: isEnabled ? onPressed : null,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
