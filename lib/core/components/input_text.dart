@@ -124,6 +124,7 @@ class _InputTextState extends State<InputText> {
         obscureText: widget.obscureText!,
         onChanged: errorText,
         cursorColor: AppColors.grey200,
+        enableInteractiveSelection: true,
         toolbarOptions: const ToolbarOptions(
           copy: true,
           cut: true,
@@ -150,14 +151,17 @@ class _InputTextState extends State<InputText> {
           hintText: widget.hint,
           hintStyle: TgyStyle.b1.grey200.w700,
           suffixIcon: widget.suffixText,
-          errorText: errorMessageText,
+          errorText: widget.controller!.text.isEmpty ? '' : errorMessageText,
           errorStyle: TgyStyle.caption.red100.copyWith(
             color: errorMessageText != null
                 ? isCompleted
                     ? AppColors.green200
                     : AppColors.red100
                 : Colors.transparent,
-            fontSize: errorMessageText != null ? 12 : 0,
+            fontSize:
+                errorMessageText != null && widget.controller!.text.isNotEmpty
+                    ? 12
+                    : 0,
           ),
           errorBorder: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(10)),

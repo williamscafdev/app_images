@@ -30,7 +30,5 @@ class AuthServices {
     }
   }
 
-  Future<void> logOut() async {
-    try {} on Exception {}
-  }
+  Future<void> logOut() async {}
 }
