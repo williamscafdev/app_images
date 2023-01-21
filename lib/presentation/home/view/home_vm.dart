@@ -17,6 +17,7 @@ class HomeViewModel extends ChangeNotifier {
   }
 
   bool get hasImgUrl => urlImage != '';
+
   List<String> _images = [];
   List<String> get images => _images;
   set images(List<String> value) {
@@ -49,15 +50,13 @@ class HomeViewModel extends ChangeNotifier {
 
   Future<void> saveImage() async {
     if (images.length == 5) {
-      error = 'Limite de imagenes alcanzado.';
-      return Future.error('');
+      return Future.error('Limite de imagenes alcanzado.');
     }
     final erroOrSaveImage = await sl<SaveImage>().call(
       urlImage: urlImage,
     );
     return await erroOrSaveImage.fold((l) {
-      error = FException().mapException[l.statusCode].toString();
-      return Future.error(l);
+      return Future.error(FException().mapException[l.statusCode].toString());
     }, (_) async {
       controllerUploadImage.clear();
       urlImage = '';
@@ -68,8 +67,7 @@ class HomeViewModel extends ChangeNotifier {
   Future<void> getImages() async {
     final erroOrImages = await sl<GetImages>().call();
     return await erroOrImages.fold((l) {
-      error = FException().mapException[l.statusCode].toString();
-      return Future.error(l);
+      return Future.error(FException().mapException[l.statusCode].toString());
     }, (data) {
       images = data;
       notifyListeners();
@@ -79,8 +77,7 @@ class HomeViewModel extends ChangeNotifier {
   Future<void> deleteImage(String path) async {
     final erroOrDeleteImg = await sl<DeleteImage>().call(path: path);
     return await erroOrDeleteImg.fold((l) {
-      error = FException().mapException[l.statusCode].toString();
-      return Future.error(l);
+      return Future.error(FException().mapException[l.statusCode].toString());
     }, (_) {
       getImages();
     });

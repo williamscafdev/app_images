@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
+import '../../../core/core.dart';
+
 class ImagesPreview extends StatelessWidget {
   const ImagesPreview(
       {required this.imagesPath,
@@ -42,7 +44,7 @@ class ImagesPreview extends StatelessWidget {
                               StackTrace? stackTrace) {
                             return Center(
                               child: Image.asset(
-                                'assets/images/not-image.jpeg',
+                                ImgA.notImage.path,
                                 height: 120,
                                 fit: BoxFit.cover,
                               ),

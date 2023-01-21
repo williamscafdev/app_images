@@ -53,7 +53,7 @@ abstract class ProgressDialogo {
     required BuildContext context,
     required Future<dynamic> Function() onLoading,
     required VoidCallback onSuccess,
-    VoidCallback? onError,
+    Function(String)? onError,
   }) async {
     final popUp = showCupertinoModalPopup(
       context: context,
@@ -88,7 +88,7 @@ abstract class ProgressDialogo {
     } catch (err) {
       Navigator.pop(context);
       if (onError != null) {
-        onError();
+        onError(err.toString());
       } else {
         rethrow;
       }

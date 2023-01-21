@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/core.dart';
@@ -19,7 +20,7 @@ class InputLoadImage extends StatelessWidget {
           child: InputText(
             controller: controller,
             minLenght: 3,
-            hint: 'Cargar imagen',
+            hint: 'home.inputText.hint'.tr(),
           ),
         ),
         space10,
@@ -37,15 +38,15 @@ class InputLoadImage extends StatelessWidget {
               ),
             ),
             child: Row(
-              children: const [
+              children: [
                 Text(
-                  'Cargar\nImagen',
-                  style: TextStyle(
+                  'home.button.getImage'.tr(),
+                  style: const TextStyle(
                     color: AppColors.green200,
                   ),
                 ),
                 space10,
-                Icon(Icons.download),
+                const Icon(Icons.download),
               ],
             ),
           ),

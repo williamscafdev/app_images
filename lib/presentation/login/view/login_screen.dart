@@ -49,21 +49,18 @@ class LoginScreen extends StatelessWidget {
                   gap24,
                   Button(
                     label: 'login.button'.tr(),
+                    borderRadius: BorderRadius.circular(10),
                     onPressed: () {
                       if (viewModel.formKey.currentState!.validate()) {
                         ProgressDialogo.show(
                           context: context,
-                          onLoading: () async {
-                            await viewModel.logIn();
-                          },
-                          onSuccess: () {
-                            context.replace(
-                              AppRoutes.routeHome,
-                            );
-                          },
-                          onError: () => _onErrorInformation(
+                          onLoading: () => viewModel.logIn(),
+                          onSuccess: () => context.replace(
+                            AppRoutes.routeHome,
+                          ),
+                          onError: (error) => _onErrorInformation(
                             context,
-                            viewModel.error,
+                            error,
                           ),
                         );
                       } else {
