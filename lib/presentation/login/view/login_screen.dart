@@ -58,9 +58,9 @@ class LoginScreen extends StatelessWidget {
                           onSuccess: () => context.replace(
                             AppRoutes.routeHome,
                           ),
-                          onError: () => _onErrorInformation(
+                          onError: (error) => _onErrorInformation(
                             context,
-                            viewModel.error,
+                            error,
                           ),
                         );
                       } else {

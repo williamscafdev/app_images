@@ -10,13 +10,6 @@ class LoginViewModel extends ChangeNotifier {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  String _error = '';
-  String get error => _error;
-  set error(String value) {
-    _error = value;
-    notifyListeners();
-  }
-
   Future<void> logIn() async {
     final erroOrSignIn = await sl<SignIn>().call(
       email: emailController.text,
@@ -24,8 +17,7 @@ class LoginViewModel extends ChangeNotifier {
     );
     return await erroOrSignIn.fold(
       (l) {
-        error = FException().mapException[l.statusCode].toString();
-        return Future.error(l);
+        return Future.error(FException().mapException[l.statusCode].toString());
       },
       (_) {},
     );

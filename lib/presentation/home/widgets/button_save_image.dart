@@ -25,9 +25,9 @@ class ButtonSaveImage extends StatelessWidget {
           context,
           'home.messageSuccess'.tr(),
         ),
-        onError: () => _onShowInformation(
+        onError: (error) => _onShowInformation(
           context,
-          messageError,
+          error,
         ),
       ),
       isEnabled: hasImgUrl,
